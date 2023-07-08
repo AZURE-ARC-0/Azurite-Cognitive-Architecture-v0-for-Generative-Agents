@@ -1,0 +1,5 @@
+Flask
+Flask-SocketIO
+flask-cors
+uvicorn
+python-dotenv
