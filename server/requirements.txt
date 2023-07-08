@@ -1,5 +1,4 @@
-Flask
-Flask-SocketIO
-flask-cors
-uvicorn
+flask
+requests
 python-dotenv
+openai
