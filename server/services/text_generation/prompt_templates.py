@@ -1,9 +1,11 @@
 import os
 import json
+from .messages import Messages
 
 class PromptTemplates:
     def __init__(self):
         self.templates = []
+        self.messages = Messages()
 
     def create_variable_template(self, text, input_variables, template_name, role="user"):
 
@@ -25,7 +27,7 @@ class PromptTemplates:
         return "Template created."
 
     def create_template(self, text, template_name, role):
-        template = {"role": role, "template": text}
+        template = self.messages.create(text, role)
 
         template_filename = f"templates/{template_name}.json"
 
@@ -84,7 +86,7 @@ class PromptTemplates:
     def display_templates(self):
         if not self.templates:
             return "No templates available."
-    
+
         templates_list = "\n".join([f"{index}. {template}" for index, template in enumerate(self.templates, start=1)])
         return f"Available Templates:\n{templates_list}"
 

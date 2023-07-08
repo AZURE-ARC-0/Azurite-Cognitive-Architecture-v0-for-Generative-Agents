@@ -9,17 +9,19 @@ class PromptTemplatesTest(unittest.TestCase):
         self.templates = PromptTemplates()
 
     def tearDown(self):
-        # Clean up any template files created during the tests
+        # Clean up template files created during the tests
         template_directory = "templates"
+        test_template_prefix = "test_"
+
         for filename in os.listdir(template_directory):
-            if filename.endswith(".json"):
+            if filename.endswith(".json") and filename.startswith(test_template_prefix):
                 template_filename = os.path.join(template_directory, filename)
                 os.remove(template_filename)
 
     def test_create_variable_template(self):
         text = "Variable template text"
         input_variables = ["var1", "var2"]
-        template_name = "variable_template"
+        template_name = "test_variable_template"
         role = "user"
 
         expected_output = "Template created."
@@ -28,7 +30,7 @@ class PromptTemplatesTest(unittest.TestCase):
 
     def test_create_template(self):
         text = "Template text"
-        template_name = "template"
+        template_name = "test_template"
         role = "user"
 
         expected_output = "Template created."
@@ -37,7 +39,7 @@ class PromptTemplatesTest(unittest.TestCase):
 
     def test_chain_template(self):
         # Create a sample template
-        template_name = "sample_template"
+        template_name = "test_sample_template"
         template_filename = f"templates/{template_name}.json"
         template_content = {"role": "user", "template": "Sample template text"}
         with open(template_filename, "w") as file:
@@ -45,7 +47,7 @@ class PromptTemplatesTest(unittest.TestCase):
 
         # Simulate user input for template selection
         user_input = ["1", "q"]
-        expected_output = "Template added to chain:\nsample_template"
+        expected_output = "Template added to chain:\ntest_sample_template"
 
         # Patch the input function to return the simulated user input
         with patch("builtins.input", side_effect=user_input):
@@ -59,7 +61,7 @@ class PromptTemplatesTest(unittest.TestCase):
     def test_select_template(self):
         # Create a sample template
         template_name = "sample_template"
-        template_filename = f"templates/{template_name}.json"
+        template_filename = f"templates/test_{template_name}.json"
         template_content = {"role": "user", "template": "Sample template text"}
         with open(template_filename, "w") as file:
             json.dump(template_content, file)
@@ -79,7 +81,7 @@ class PromptTemplatesTest(unittest.TestCase):
 
     def test_delete_template(self):
         # Create a sample template
-        template_name = "sample_template"
+        template_name = "test_sample_template"
         template_filename = f"templates/{template_name}.json"
         template_content = {"role": "user", "template": "Sample template text"}
         with open(template_filename, "w") as file:

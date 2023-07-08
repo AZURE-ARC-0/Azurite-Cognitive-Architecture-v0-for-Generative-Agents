@@ -20,6 +20,7 @@ class OpenAIAPI():
             model = self.model
             messages = messages
         )
+        return response.choices[0].message
     def change_model(self, model="gpt-3.5-turbo"):
         self.model = model
         return f"Model changed to {self.model}"
