@@ -1,0 +1,10 @@
+flask
+requests
+python-dotenv
+openai
+langchain
+pypdf
+unstructured
+playwright
+chromadb
+sentence-transformers
