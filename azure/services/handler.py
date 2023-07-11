@@ -7,7 +7,7 @@ class DataHandler():
     def __init__(self):
         self.openai_text = OpenAITextGeneration()
         self.messages = Messages()
-        self.image_path = "static/images/Azurite001.png"
+        self.image_path = "azure/static/images/Azurite001.png"
 
     def handle_chat(self, data, role):
         prompt = self.messages.create(message=data, role=role)
