@@ -1,19 +1,17 @@
 import streamlit as st
 from server import DataHandler
 import base64
+from io import BytesIO
 
 data_handler = DataHandler()
 
 st.title("Hex Port")
 
 blob_link = data_handler.handle_image()
-image = base64.b64decode(blob_link)
-image_link = 'assets/images/Azurerite001.png'
-with open(image_link, "wb", buffering=0) as f:
-    content = f.write(image)
+image = BytesIO(base64.b64decode(blob_link))
 
 with st.sidebar:
-    persona = st.sidebar.image(image=image_link, use_column_width=True)
+    st.image(image, use_column_width=True)
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
