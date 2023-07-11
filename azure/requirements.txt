@@ -1,3 +1,4 @@
+streamlit
 flask
 openai
 python-dotenv
