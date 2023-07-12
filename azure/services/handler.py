@@ -18,6 +18,4 @@ class DataHandler():
     def handle_image(self):
         with open(self.image_path, "rb") as f:
             content = f.read()
-        blob_link = base64.b64encode(content).decode("utf-8")
-        print(blob_link)
-        return blob_link
+        return base64.b64encode(content).decode("utf-8")

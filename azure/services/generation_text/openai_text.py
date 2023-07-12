@@ -16,14 +16,8 @@ class OpenAITextGeneration():
         self.messages = Messages()
 
     def send_chat_complete(self, prompt_list):
-        messages = [
-            {"role": "system",
-             "content": "You are a friendly and helpful chatbot."
-             },
-            prompt_list
-        ]
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
-            messages=messages
+            messages=prompt_list
             )
         return response.choices[0].message
