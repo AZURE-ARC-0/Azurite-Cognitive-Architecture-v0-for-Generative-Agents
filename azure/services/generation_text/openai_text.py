@@ -15,9 +15,14 @@ class OpenAITextGeneration():
     def __init__(self):
         self.messages = Messages()
 
-    def send_chat_complete(self, prompt_list):
+    def send_chat_complete(self, message):
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=prompt_list
             )
-        return response.choices[0].message
+        return response.choices[0]["message"]
+
+    def get_prompt_list(self, message, role=None):
+        message_prompt = self.messages.create(message, role)
+        primer = self.messages.primer
+        context = self.messages.context_window.create_prompts(message_prompt)

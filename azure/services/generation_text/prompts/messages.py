@@ -1,35 +1,25 @@
-import json
-
+from services.generation_text.prompts.context_window import ContextWindow
+from services.generation_text.prompts.primer_context import PrimerContext
 
 class Messages():
 
     def __init__(self):
-        self.message_history = "static/messages/message_history.jsonl"
+        self.message_history = "azure/static/messages/message_history.jsonl"
+        self.message = None
+        self.context_window = ContextWindow()
+        self.primer_context = PrimerContext()
 
-    def create(self, message, role="user"):
+    def create(self, message="testing this", role="user"):
         if not message:
-            return "please enter a message"
+            return "No message provided."
+        if not role:
+            role = "user"
         if role == "user":
-            #self.save_recent_message(message)
-            return {"role": "user", "content": message}
+            self.message = {"role": "user", "content": message}
         if role == "assistant":
-            self.save_recent_message(message)
-            return {"role": "assistant", "content": message}
+            self.message = {"role": "assistant", "content": message}
         if role == "system":
-            self.save_recent_message(message)
-            return {"role": "system", "content": message}
-        else:
-            return "Unknown role"
-
-    def save_recent_message(self, message):
-        with open(self.message_history, "r+") as file:
-            json_data = json.load(file)
-            json_data.append(self, message)
-            file.seek(0)
-            json.dump(json_data, file, indent=4)
-            file.truncate()
-
-    def get_recent_messages(self):
-        with open(self.message_history, "r") as file:
-            json_data = json.load(file)
-        return [message for i, message in enumerate(json_data) if i < 10]
+            self.message = {"role": "system", "content": message}
+        self.context_window.create_prompts(self.message)
+        print(self.context_window.context)
+        return self.context_window.context
