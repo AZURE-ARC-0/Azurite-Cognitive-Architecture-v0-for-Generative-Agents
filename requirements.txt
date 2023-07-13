@@ -65,7 +65,6 @@ pytest==7.4.0
 python-dateutil==2.8.2
 pytz==2023.3
 pytz-deprecation-shim==0.1.0.post0
-pywin32==306
 pyzmq==25.1.0
 referencing==0.29.1
 requests==2.31.0
