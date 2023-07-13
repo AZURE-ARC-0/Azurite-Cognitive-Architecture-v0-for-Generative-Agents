@@ -3,76 +3,24 @@
         "context-window": {
             "bsonType": "object",
             "properties": {
-                "index": {
-                    "bsonType": "int"
-                },
-                "message": {
-                    "bsonType": "object",
-                    "properties": {
-                        "content": {
-                            "bsonType": "string"
-                        },
-                        "context": {
-                            "bsonType": "string"
-                        },
-                        "message-id": {
-                            "bsonType": "uuid"
-                        },
-                        "message-timestamp": {
-                            "bsonType": "timestamp"
-                        },
-                        "role": {
-                            "bsonType": "string"
-                        }
-                    },
-                    "required": [
-                        "message-id",
-                        "message-timestamp",
-                        "role",
-                        "content"
-                    ],
-                    "title": "context-window-message"
+                "message-id": {
+                    "bsonType": "objectId"
                 }
             },
             "required": [
-                "message",
-                "index"
+                "message-id"
             ],
             "title": "context-window"
         },
         "history": {
             "bsonType": "object",
             "properties": {
-                "message": {
-                    "bsonType": "object",
-                    "properties": {
-                        "content": {
-                            "bsonType": "string"
-                        },
-                        "context": {
-                            "bsonType": "string"
-                        },
-                        "message-id": {
-                            "bsonType": "uuid"
-                        },
-                        "message-timestamp": {
-                            "bsonType": "timestamp"
-                        },
-                        "role": {
-                            "bsonType": "string"
-                        }
-                    },
-                    "required": [
-                        "message-id",
-                        "message-timestamp",
-                        "role",
-                        "content"
-                    ],
-                    "title": "history-message"
+                "message-id": {
+                    "bsonType": "objectId"
                 }
             },
             "required": [
-                "message"
+                "message-id"
             ],
             "title": "history"
         },
@@ -86,7 +34,7 @@
                     "bsonType": "string"
                 },
                 "message-id": {
-                    "bsonType": "uuid"
+                    "bsonType": "objectId"
                 },
                 "role": {
                     "bsonType": "string"
@@ -106,36 +54,12 @@
         "primers": {
             "bsonType": "object",
             "properties": {
-                "message": {
-                    "bsonType": "object",
-                    "properties": {
-                        "content": {
-                            "bsonType": "string"
-                        },
-                        "context": {
-                            "bsonType": "string"
-                        },
-                        "message-id": {
-                            "bsonType": "uuid"
-                        },
-                        "role": {
-                            "bsonType": "string"
-                        },
-                        "timestamp": {
-                            "bsonType": "timestamp"
-                        }
-                    },
-                    "required": [
-                        "message-id",
-                        "timestamp",
-                        "role",
-                        "content"
-                    ],
-                    "title": "primer-message"
+                "message-id": {
+                    "bsonType": "objectId"
                 }
             },
             "required": [
-                "message"
+                "message-id"
             ],
             "title": "primer"
         }

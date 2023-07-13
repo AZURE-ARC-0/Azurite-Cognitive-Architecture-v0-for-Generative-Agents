@@ -16,7 +16,7 @@
                     "bsonType": "string"
                 },
                 "image-id": {
-                    "bsonType": "uuid"
+                    "bsonType": "objectId"
                 },
                 "image-url": {
                     "bsonType": "string"
