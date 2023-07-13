@@ -1,1 +1,6 @@
-[{"role": "user", "content": "Test message 0"}, {"role": "user", "content": "Test message 1"}, {"role": "user", "content": "Test message 2"}, {"role": "user", "content": "Test message 3"}, {"role": "user", "content": "Test message 4"}, {"role": "user", "content": "Test message 5"}, {"role": "user", "content": "Test message 6"}, {"role": "user", "content": "Test message 7"}, {"role": "user", "content": "Test message 8"}, {"role": "user", "content": "Test message 9"}, {"role": "user", "content": "Test message 10"}, {"role": "user", "content": "Test message 11"}, {"role": "user", "content": "Test message 12"}, {"role": "user", "content": "Test message 13"}, {"role": "user", "content": "Test message 14"}]
+{"role": "user", "content": "yay it works!"}
+{"role": "user", "content": "can you remmeber the last two things we said to eachother?"}
+{"role": "user", "content": "what was i excited about when we started talking?"}
+{"role": "user", "content": "thats ok"}
+{"role": "user", "content": "whats your name?"}
+{"role": "user", "content": "can you give me a brief description of your self for your info card?"}

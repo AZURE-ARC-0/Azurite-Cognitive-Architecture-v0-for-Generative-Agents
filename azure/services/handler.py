@@ -4,16 +4,18 @@ import base64
 
 
 class DataHandler():
-    def __init__(self):
+    def __init__(self, persona_image=None):
         self.openai_text = OpenAITextGeneration()
         self.messages = Messages()
-        self.image_path = "azure/static/images/Azurite001.png"
+        self.image_path = persona_image
 
-    def handle_chat(self, data, role):
-        prompt = self.messages.create(message=data, role=role)
-        response = self.openai_text.send_chat_complete(prompt)
-        print(response)
-        return response
+    def handle_chat(self, user_message, role=None, num_messages=None,):
+        prompt_list = self.messages.get_context(
+            user_message,
+            role,
+            num_messages,
+        )
+        return self.openai_text.send_chat_complete(prompt_list)
 
     def handle_image(self):
         with open(self.image_path, "rb") as f:
