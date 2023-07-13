@@ -1,12 +1,12 @@
 import json
+from messages_defs import MessagesDefs
+from services.system_tools.ye_logger_of_yor import logger
 
 
-class Messages():
+class Messages(MessagesDefs):
 
     def __init__(self):
-        pass
-
-    def initialize_plugin(self):
+        super().__init__()
         self.message_history = "azure/static/messages/message_history.jsonl"
         self.primer_path = "azure/static/templates/primers.jsonl"
         self.context = []
@@ -21,10 +21,16 @@ class Messages():
                     primer = json.loads(line)
             self.primer = primer
             self.context.append(self.primer)
+        except FileNotFoundError as e:
+            logger.error("Primer file not found: %s", e)
+            raise PrimerNotFoundError("Primer file could not be opened") from e
+        except json.JSONDecodeError as e:
+            logger.error("Invalid primer file: %s", e)
+            raise PrimerParseError("Primer file is invalid JSON") from e
         except Exception as e:
-            error_message = \
-                f"There was an error setting the default primer:{e}"
-            raise ValueError(error_message) from e
+            logger.error("Unexpected error loading primer: %s", e)
+            raise PrimerLoadError("Unexpected error loading primer") from e
+
 
     def add_message(self, message):
         self.context.append(message)
@@ -35,7 +41,6 @@ class Messages():
             created_message = {"role": role, "content": message}
             self.add_message(created_message)
             self.save_message(created_message, self.message_history)
-            return self.context
         except ValueError as e:
             print("There was an error creating the message:", e)
             raise
@@ -44,7 +49,7 @@ class Messages():
         with open(filepath, 'a') as file:
             file.write(json.dumps(message) + "\n")
 
-    def retrieve_messages(self, filepath, num_messages):
+    def retrieve_messages(self, filepath, num_messages=None):
         if not num_messages:
             num_messages = 8
         lines = []
@@ -55,7 +60,7 @@ class Messages():
                 lines.append(json.loads(line.strip()))
         return lines
 
-    def check_roles(self, role=None):
+    def check_roles(self, role =None):
         if not role:
             role = "user"
         roles = ["user", "system", "assistant"]

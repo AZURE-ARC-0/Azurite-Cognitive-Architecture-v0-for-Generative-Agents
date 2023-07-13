@@ -3,3 +3,6 @@ primaryColor = "#1b6060"
 backgroundColor = "#6cbb6d"
 secondaryBackgroundColor = "#afbf98"
 textColor = "#25395e"
+
+[runner]
+enforceSerializableSessionState = true
