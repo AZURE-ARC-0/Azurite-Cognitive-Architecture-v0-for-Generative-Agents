@@ -1,0 +1,91 @@
+{
+    "properties": {
+        "description": {
+            "bsonType": "string"
+        },
+        "image": {
+            "bsonType": "object",
+            "properties": {
+                "bytes-array": {
+                    "bsonType": "array",
+                    "items": {
+                        "bsonType": "binData"
+                    }
+                },
+                "context": {
+                    "bsonType": "string"
+                },
+                "description": {
+                    "bsonType": "string"
+                },
+                "image-id": {
+                    "bsonType": "uuid"
+                },
+                "image-url": {
+                    "bsonType": "string"
+                },
+                "negative-prompt": {
+                    "bsonType": "string"
+                },
+                "prompt": {
+                    "bsonType": "string"
+                },
+                "timestamp": {
+                    "bsonType": "timestamp"
+                },
+                "title": {
+                    "bsonType": "string"
+                }
+            },
+            "required": [
+                "bytes-array",
+                "image-id",
+                "image-url",
+                "timestamp",
+                "title",
+                "description"
+            ],
+            "title": "persona-image"
+        },
+        "message": {
+            "bsonType": "object",
+            "properties": {
+                "content": {
+                    "bsonType": "string"
+                },
+                "context": {
+                    "bsonType": "string"
+                },
+                "message-id": {
+                    "bsonType": "uuid"
+                },
+                "role": {
+                    "bsonType": "string"
+                },
+                "timestamp": {
+                    "bsonType": "timestamp"
+                }
+            },
+            "required": [
+                "message-id",
+                "timestamp",
+                "role",
+                "content"
+            ],
+            "title": "persona-message"
+        },
+        "name": {
+            "bsonType": "string"
+        },
+        "persona-id": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "persona-id",
+        "name",
+        "message",
+        "image"
+    ],
+    "title": "persona"
+}

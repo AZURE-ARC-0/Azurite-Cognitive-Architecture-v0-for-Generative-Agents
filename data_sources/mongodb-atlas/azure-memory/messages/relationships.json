@@ -1,0 +1,110 @@
+{
+    "context-window.message": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/messages",
+        "source_key": "context-window.message",
+        "foreign_key": "message",
+        "is_list": false
+    },
+    "context-window.message.content": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/messages",
+        "source_key": "context-window.message.content",
+        "foreign_key": "message.content",
+        "is_list": false
+    },
+    "context-window.message.context": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/messages",
+        "source_key": "context-window.message.context",
+        "foreign_key": "message.context",
+        "is_list": false
+    },
+    "context-window.message.message-id": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/messages",
+        "source_key": "context-window.message.message-id",
+        "foreign_key": "message.message-id",
+        "is_list": false
+    },
+    "context-window.message.message-timestamp": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/messages",
+        "source_key": "context-window.message.message-timestamp",
+        "foreign_key": "message.timestamp",
+        "is_list": false
+    },
+    "context-window.message.role": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/messages",
+        "source_key": "context-window.message.role",
+        "foreign_key": "message.role",
+        "is_list": false
+    },
+    "history.message": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/messages",
+        "source_key": "history.message",
+        "foreign_key": "message",
+        "is_list": false
+    },
+    "history.message.content": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/messages",
+        "source_key": "history.message.content",
+        "foreign_key": "message.content",
+        "is_list": false
+    },
+    "history.message.context": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/messages",
+        "source_key": "history.message.context",
+        "foreign_key": "message.context",
+        "is_list": false
+    },
+    "history.message.message-id": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/messages",
+        "source_key": "history.message.message-id",
+        "foreign_key": "message.message-id",
+        "is_list": false
+    },
+    "history.message.message-timestamp": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/messages",
+        "source_key": "history.message.message-timestamp",
+        "foreign_key": "message.timestamp",
+        "is_list": false
+    },
+    "history.message.role": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/messages",
+        "source_key": "history.message.role",
+        "foreign_key": "message.role",
+        "is_list": false
+    },
+    "primers.message": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/messages",
+        "source_key": "primers.message",
+        "foreign_key": "message",
+        "is_list": false
+    },
+    "primers.message.content": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/messages",
+        "source_key": "primers.message.content",
+        "foreign_key": "message.content",
+        "is_list": false
+    },
+    "primers.message.context": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/messages",
+        "source_key": "primers.message.context",
+        "foreign_key": "message.context",
+        "is_list": false
+    },
+    "primers.message.message-id": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/messages",
+        "source_key": "primers.message.message-id",
+        "foreign_key": "message.message-id",
+        "is_list": false
+    },
+    "primers.message.role": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/messages",
+        "source_key": "primers.message.role",
+        "foreign_key": "message.role",
+        "is_list": false
+    },
+    "primers.message.timestamp": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/messages",
+        "source_key": "primers.message.timestamp",
+        "foreign_key": "message.timestamp",
+        "is_list": false
+    }
+}

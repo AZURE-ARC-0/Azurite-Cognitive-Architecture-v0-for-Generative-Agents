@@ -1,0 +1,92 @@
+{
+    "image": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/images",
+        "source_key": "image",
+        "foreign_key": "image",
+        "is_list": false
+    },
+    "image.context": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/images",
+        "source_key": "image.context",
+        "foreign_key": "image.context",
+        "is_list": false
+    },
+    "image.description": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/images",
+        "source_key": "image.description",
+        "foreign_key": "image.description",
+        "is_list": false
+    },
+    "image.image-id": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/images",
+        "source_key": "image.image-id",
+        "foreign_key": "image.image-id",
+        "is_list": false
+    },
+    "image.image-url": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/images",
+        "source_key": "image.image-url",
+        "foreign_key": "image.image-url",
+        "is_list": false
+    },
+    "image.negative-prompt": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/images",
+        "source_key": "image.negative-prompt",
+        "foreign_key": "image.negative-prompt",
+        "is_list": false
+    },
+    "image.prompt": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/images",
+        "source_key": "image.prompt",
+        "foreign_key": "image.prompt",
+        "is_list": false
+    },
+    "image.timestamp": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/images",
+        "source_key": "image.timestamp",
+        "foreign_key": "image.timestamp",
+        "is_list": false
+    },
+    "image.title": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/images",
+        "source_key": "image.title",
+        "foreign_key": "image.title",
+        "is_list": false
+    },
+    "message": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/messages",
+        "source_key": "message",
+        "foreign_key": "message",
+        "is_list": false
+    },
+    "message.content": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/messages",
+        "source_key": "message.content",
+        "foreign_key": "message.content",
+        "is_list": false
+    },
+    "message.context": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/messages",
+        "source_key": "message.context",
+        "foreign_key": "message.context",
+        "is_list": false
+    },
+    "message.message-id": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/messages",
+        "source_key": "message.message-id",
+        "foreign_key": "history.message.message-id",
+        "is_list": false
+    },
+    "message.role": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/messages",
+        "source_key": "message.role",
+        "foreign_key": "message.role",
+        "is_list": false
+    },
+    "message.timestamp": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/messages",
+        "source_key": "message.timestamp",
+        "foreign_key": "message.timestamp",
+        "is_list": false
+    }
+}
