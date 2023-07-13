@@ -4,6 +4,9 @@ import json
 class Messages():
 
     def __init__(self):
+        pass
+
+    def initialize_plugin(self):
         self.message_history = "azure/static/messages/message_history.jsonl"
         self.primer_path = "azure/static/templates/primers.jsonl"
         self.context = []
