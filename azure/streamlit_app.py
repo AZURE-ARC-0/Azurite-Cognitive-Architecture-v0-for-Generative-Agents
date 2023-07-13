@@ -20,7 +20,19 @@ with st.sidebar:
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
+context = []
+def state_context():
+    if not st.session_state.messages:
+        return
+    for i, item in reversed(enumerate(st.session_state.messages.items())):
+        if not item:
+            break
+        if i < 10 and item[0]["role"] != "system":
+            context.append(item[i])
+    context.append(prompt)
+
 for message in st.session_state.messages:
+    context.append(message)
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
