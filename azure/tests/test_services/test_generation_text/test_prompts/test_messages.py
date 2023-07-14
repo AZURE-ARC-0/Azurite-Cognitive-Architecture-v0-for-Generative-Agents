@@ -1,6 +1,3 @@
-import pytest
-from services.generation_text.prompts.messages import Messages
-
 
 def test_create():
     messages = Messages()

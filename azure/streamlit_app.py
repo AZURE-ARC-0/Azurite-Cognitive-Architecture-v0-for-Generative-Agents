@@ -2,7 +2,9 @@ import streamlit as st
 from server import DataHandler
 import base64
 from io import BytesIO
+from services.system_tools.ye_logger_of_yor import get_logger
 
+logger = get_logger()
 
 persona = ["Eris MischiefBloom🌺", "azure/static/images/Eris0001.png"]
 
@@ -22,25 +24,26 @@ with st.sidebar:
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
+st.session_state.messages = st.session_state.messages
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
 if prompt := st.chat_input("Prompt"):
-    state_message = st.session_state.messages.append({"role": "user", "content": prompt})
+    prompt = st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
+        response = data_handler.handle_chat(prompt)
+        print(response)
+        logger.log(response)
 
-
-with st.chat_message("assistant"):
-    message_placeholder = st.empty()
-    full_response = ""
-    for response in data_handler.handle_chat(prompt, role="user"):
-        full_response += response.choices[0].delta.get("content", "")
-        message_placeholder.markdown(f"{full_response} ▌")
-    message_placeholder.markdown(full_response)
-    store_response = {"role": "assistant", "content": full_response}
-state_message = st.session_state.messages.append(
-    store_response
-    )
-data_handler.handle_bot_response(store_response)
+#
+#with st.chat_message("assistant"):
+#    message_placeholder = st.empty()
+#    full_response = ""
+#    for response in data_handler.handle_chat(prompt, role="user"):
+#        full_response += response.choices[0].delta.get("content", "")
+#        message_placeholder.markdown(f"{full_response} ▌")
+#    message_placeholder.markdown(full_response)
+#state_message = st.session_state.messages.append({"role": "assistant","content": full_response})
+#

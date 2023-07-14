@@ -2,6 +2,7 @@ import os
 import sys
 import openai
 from dotenv import load_dotenv
+from typing import Dict, List
 
 load_dotenv()
 
@@ -15,8 +16,7 @@ class OpenAITextGeneration():
         pass
 
     def send_chat_complete(self, prompt_list):
-        messages = list(prompt_list)
-        print(messages)
+        messages: List[Dict[str, str]] = list(prompt_list)
         try:
             response = openai.ChatCompletion.create(
                 model="gpt-4",

@@ -1,5 +1,6 @@
 from flask import Flask, request
 from services.handler import DataHandler
+from typing import Dict, List
 
 app = Flask(__name__)
 
@@ -7,9 +8,9 @@ handler = DataHandler()
 
 
 @app.route("/chat", methods=["POST, GET"])
-def chat(message):
-    req = request.get_data(message)
-    response = handler.handle_chat(req)
+def chat(message: List[Dict[str, str]]):
+    req: List[Dict[str, str]] = request.get_data(message)
+    response: GeneratorExit = handler.handle_chat(req)
     print(response)
     return response
 

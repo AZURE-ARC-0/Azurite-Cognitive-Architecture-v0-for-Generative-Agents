@@ -1,16 +1,5 @@
 {"role": "user", "content": "yay it works!"}
-{"role": "user", "content": "can you remmeber the last two things we said to eachother?"}
-{"role": "user", "content": "what was i excited about when we started talking?"}
-{"role": "user", "content": "thats ok"}
+{"role": "assistant", "content": "Oh, does it? Well I'm glad you got it working"}
 {"role": "user", "content": "whats your name?"}
+{"role": "assistant", "content": "I am Eris Bloom! Ready for a bit of adventure?"}
 {"role": "user", "content": "can you give me a brief description of your self for your info card?"}
-{"role": "user", "content": "hi"}
-{"role": "user", "content": "hi"}
-{"role": "user", "content": "oh you remmeber me?"}
-{"role": "user", "content": "you remember me?"}
-{"role": "user", "content": "great, i have to go to bed now but ill be back"}
-{"role": "user", "content": "hi"}
-{"role": "user", "content": "alright i could do with some chat, ive been working all day"}
-{"role": "user", "content": "alright can we get cha to talk past your prompt?"}
-{"role": "user", "content": "lets do it, what cha thinkin?"}
-{"role": "user", "content": "alright, im currently workin a pretty good job but have been developing my own systems, you happen to be one of them. im tryin to spring board that into adventure"}
