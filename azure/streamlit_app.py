@@ -2,23 +2,15 @@ import streamlit as st
 from server import DataHandler
 import base64
 from io import BytesIO
-from typing import Dict, List
 
 
-persona: List[str] = ["Eris Bloom", "azure/static/images/Eris0001.png"]
-
-st.set_page_config: Dict[str, str] = dict(
-    page_title="Eris MischiefBloom",
-    page_icon="🌺",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+persona = ["Eris MischiefBloom🌺", "azure/static/images/Eris0001.png"]
 
 st.title = (persona[0])
 
-data_handler: DataHandler = DataHandler(persona[1]:List[str]=persona[1])
+data_handler: DataHandler = DataHandler(persona[1])
 
-blob_link: str = data_handler.handle_image()
+blob_link = data_handler.handle_image()
 
 image = BytesIO(base64.b64decode(blob_link))
 
@@ -47,7 +39,8 @@ with st.chat_message("assistant"):
         full_response += response.choices[0].delta.get("content", "")
         message_placeholder.markdown(f"{full_response} ▌")
     message_placeholder.markdown(full_response)
-state_message = st.session_state.messages.append({
-    "role": "assistant",
-    "content": full_response
-    })
+    store_response = {"role": "assistant", "content": full_response}
+state_message = st.session_state.messages.append(
+    store_response
+    )
+data_handler.handle_bot_response(store_response)
