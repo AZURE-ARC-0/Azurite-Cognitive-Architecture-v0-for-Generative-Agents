@@ -1,0 +1,8 @@
+{
+    "app_id": "application-0-yqujg",
+    "config_version": 20210101,
+    "name": "Application-0",
+    "location": "US-VA",
+    "provider_region": "gcp-us-central1",
+    "deployment_model": "LOCAL"
+}

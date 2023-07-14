@@ -1,0 +1,49 @@
+{
+    "properties": {
+        "image": {
+            "bsonType": "object",
+            "properties": {
+                "bytes-array": {
+                    "bsonType": "array",
+                    "items": {
+                        "bsonType": "binData"
+                    }
+                },
+                "context": {
+                    "bsonType": "string"
+                },
+                "description": {
+                    "bsonType": "string"
+                },
+                "image-id": {
+                    "bsonType": "objectId"
+                },
+                "image-url": {
+                    "bsonType": "string"
+                },
+                "negative-prompt": {
+                    "bsonType": "string"
+                },
+                "prompt": {
+                    "bsonType": "string"
+                },
+                "timestamp": {
+                    "bsonType": "timestamp"
+                },
+                "title": {
+                    "bsonType": "string"
+                }
+            },
+            "required": [
+                "bytes-array",
+                "image-id",
+                "image-url",
+                "timestamp",
+                "title",
+                "description"
+            ],
+            "title": "image"
+        }
+    },
+    "title": "images"
+}

@@ -1,0 +1,59 @@
+{
+    "properties": {
+        "user": {
+            "bsonType": "object",
+            "properties": {
+                "added-on": {
+                    "bsonType": "timestamp"
+                },
+                "api-key": {
+                    "bsonType": "string"
+                },
+                "avatar": {
+                    "bsonType": "object",
+                    "properties": {
+                        "image-id": {
+                            "bsonType": "objectId"
+                        }
+                    },
+                    "title": "avatar-image"
+                },
+                "deleted-on": {
+                    "bsonType": "timestamp"
+                },
+                "history-message": {
+                    "bsonType": "object",
+                    "properties": {
+                        "message-id": {
+                            "bsonType": "objectId"
+                        }
+                    },
+                    "required": [
+                        "message-id"
+                    ],
+                    "title": "user-history-message"
+                },
+                "updated-on": {
+                    "bsonType": "timestamp"
+                },
+                "user-id": {
+                    "bsonType": "objectId"
+                },
+                "user-name": {
+                    "bsonType": "string"
+                },
+                "user-password": {
+                    "bsonType": "string"
+                }
+            },
+            "required": [
+                "user-id",
+                "user-name",
+                "user-password",
+                "api-key"
+            ],
+            "title": "user"
+        }
+    },
+    "title": "user-info"
+}

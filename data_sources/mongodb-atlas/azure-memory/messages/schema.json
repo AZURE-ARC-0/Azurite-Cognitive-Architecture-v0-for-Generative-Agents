@@ -1,0 +1,71 @@
+{
+    "properties": {
+        "context-window": {
+            "bsonType": "object",
+            "properties": {
+                "message-id": {
+                    "bsonType": "objectId"
+                }
+            },
+            "required": [
+                "message-id"
+            ],
+            "title": "context-window"
+        },
+        "history": {
+            "bsonType": "object",
+            "properties": {
+                "message-id": {
+                    "bsonType": "objectId"
+                }
+            },
+            "required": [
+                "message-id"
+            ],
+            "title": "history"
+        },
+        "message": {
+            "bsonType": "object",
+            "properties": {
+                "content": {
+                    "bsonType": "string"
+                },
+                "context": {
+                    "bsonType": "string"
+                },
+                "message-id": {
+                    "bsonType": "objectId"
+                },
+                "role": {
+                    "bsonType": "string"
+                },
+                "timestamp": {
+                    "bsonType": "timestamp"
+                }
+            },
+            "required": [
+                "message-id",
+                "timestamp",
+                "role",
+                "content"
+            ],
+            "title": "message"
+        },
+        "primers": {
+            "bsonType": "object",
+            "properties": {
+                "message-id": {
+                    "bsonType": "objectId"
+                }
+            },
+            "required": [
+                "message-id"
+            ],
+            "title": "primer"
+        }
+    },
+    "required": [
+        "message"
+    ],
+    "title": "messages"
+}

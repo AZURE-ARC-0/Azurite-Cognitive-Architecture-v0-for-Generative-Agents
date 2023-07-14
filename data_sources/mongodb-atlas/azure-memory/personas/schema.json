@@ -1,0 +1,44 @@
+{
+    "properties": {
+        "description": {
+            "bsonType": "string"
+        },
+        "image": {
+            "bsonType": "object",
+            "properties": {
+                "image-id": {
+                    "bsonType": "objectId"
+                }
+            },
+            "required": [
+                "image-id"
+            ],
+            "title": "persona-image"
+        },
+        "message": {
+            "bsonType": "object",
+            "properties": {
+                "message-id": {
+                    "bsonType": "objectId"
+                }
+            },
+            "required": [
+                "message-id"
+            ],
+            "title": "persona-message"
+        },
+        "persona-id": {
+            "bsonType": "objectId"
+        },
+        "persona-name": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "persona-id",
+        "persona-name",
+        "message",
+        "image"
+    ],
+    "title": "persona"
+}

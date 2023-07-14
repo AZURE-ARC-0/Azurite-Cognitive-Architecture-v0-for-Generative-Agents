@@ -1,0 +1,14 @@
+{
+    "image.image-id": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/images",
+        "source_key": "image.image-id",
+        "foreign_key": "image.image-id",
+        "is_list": false
+    },
+    "message.message-id": {
+        "ref": "#/relationship/mongodb-atlas/azure-memory/messages",
+        "source_key": "message.message-id",
+        "foreign_key": "message.message-id",
+        "is_list": false
+    }
+}
